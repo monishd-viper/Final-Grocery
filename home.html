@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyGrocyy-Your day to grocery shopping website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <link rel="stylesheet" href="grocyy.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./function.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <header class="header">
+
+        <section class="flex">
+
+            <a href="home.html" class="logo"> <i class="fas fa-shopping-basket"></i> DailyGrocyy </a>
+
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#Deals">Deals</a>
+                <a href="#products">products</a>
+                <a href="#categories">categories</a>
+
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart" id="cart-btn" style="position: relative;">
+                    <span class="cart-qty">0</span>
+                </div>
+                <div class="fas fa-user" id="login-btn"></div>
+            </div>
+
+            
+            <form action="" class="search-form">
+                <input type="search" id="search-box" placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+            <div class="search-relative" style="position: relative;">
+                <div class="search-container">
+                    <div class="search-container-outter" style="width: 100%;max-height: 250px;" >
+                        <div class="search-container-inner">
+                    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            
+
+            <div class="shopping-cart">
+
+
+                <div class="content">
+                    <p style="font-size: 26px; font-weight: bold;">Cart is empty </p>
+
+                    <span style="font-size: 16px; font-weight: 600;" class="quantity">qty : nil</span>
+                </div>
+                <div id="cartBucket" class="cart-bucket">
+                    
+                </div>
+                <div class="total-container">
+                    
+                </div>
+                <center><span href="payment.html" style="opacity: 0.5;pointer-events: none;" class="btn" id="checkoutBtn">Checkout</span>
+                </center>
+            </div>
+
+
+            <form action="" id="loginForm" class="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="box">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="box"><br>
+                <span id="passwordError" class="error"></span>
+                <span id="passwordSuccess" class="success"></span>
+                <br>
+                <p>Forgot your password? <a href="forgot-password.html">Click here</a></p>
+                <br>
+                <input type="submit" value="login now" class="btn">
+            </form>
+
+            <!-- <form action="" class="login-form">
+        <h3>login now</h3>
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password? <a href="#">click here</a></p>
+        <p>do not have an account? <a href="#">Register</a></p>
+        <input type="submit" value="login now" class="btn">
+    </form> -->
+
+        </section>
+
+    </header>
+
+
+
+    <div class="home-container">
+
+        <section class="home" id="home">
+
+            <div class="content">
+                <h3>Your daily needs at your <span>convinient</span> place!</h3>
+                <p><b>Grocery shopping made easy.</b></p>
+                <a href="#" class="btn">shop now</a>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+
+    <section class="Deals" id="Deals">
+
+        <h1 class="heading"> Today's <span>Deals</span>
+<div class="tooltip">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+                  
+                  <title>Note: These deals are available until 12/14 11:59pm</title>
+                </svg>
+                <span class=" tooltiptext"> Note: These deals are available until 12/14 11:59pm</span>
+                
+              </div>
+             <!-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>  -->
+            </h1>
+        <div class="box-container">
+
+            <div class="box">
+                <img src="image/meatdeal.png" alt="">
+                <h3>Meat-O-Eat!!!</h3>
+                <p>buy 2lb chicken and get the 3rd lb for free.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="image/dairydeal.jpg" alt="">
+                <h3>20% Off!!</h3>
+                <p>Get 20% off on dairy products when purchased more than 50$.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    
+
+
+    <section class="products" id="products">
+
+        <h1 class="heading"> our <span>products</span> </h1>
+<div class="row" style="flex-wrap: nowrap;">
+    <button id="prevBtn" class="scroll"><</button>
+        <div class="carousel-container products">
+            <div class="content" id="content1">
+                <div class="row">
+    
+                    <div class="product-card box">
+                        <img src="image/apple.jpg" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <input type="hidden" class="img-src" value="apple.jpg"/>
+                            <h2 class="product-title">Apples</h2>
+                         <b><p class="product-price">$<span class="price-amount">4.99</span>/lb</p></b>
+                            <p class="product-qty">(3/10 remaining)</p>
+                            <span class="add-cart btn">add to cart</span>
+                        </div>
+                    </div>
+        
+                    <div class="product-card box">
+                        <img src="image/bananas.jpg" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <input type="hidden" class="img-src" value="bananas.jpg"/>
+                            <h2 class="product-title">Bananas</h2>
+                           <b><p class="product-price">$<span class="price-amount">1.99</span>/lb</p></b>
+                            <p class="product-qty">(7/10 remaining)</p>
+                            <span class="add-cart btn">add to cart</span>
+                        </div>
+                    </div>
+        
+                    <div class="product-card box">
+                        <img src="image/chiken.jpg" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <input type="hidden" class="img-src" value="chiken.jpg"/>
+                            <h2 class="product-title">Sliced chicken breasts</h2>
+                            <b><p class="product-price">$<span class="price-amount">2.22</span>/lb</p></b>
+                            <p class="product-qty">(8/10 remaining)</p>
+                            <span class="add-cart btn">add to cart</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+        
+                    <div class="product-card box">
+                        <img src="image/shrimp.jpg" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <input type="hidden" class="img-src" value="shrimp.jpg"/>
+                            <h2 class="product-title">Shrimp</h2>
+                            <b><p class="product-price">$<span class="price-amount">7.99</span>/lb </p></b>
+                            <p class="product-qty">(10/10 remaining)</p>
+                            <span class="add-cart btn">add to cart</span>
+                        </div>
+                    </div>
+    
+                    <div class="product-card box">
+                        <img src="image/milk.png" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <input type="hidden" class="img-src" value="milk.png"/>
+                            <h2 class="product-title">Horizon-Organic Milk</h2>
+                            <b><p class="product-price">$<span class="price-amount">1.99</span>/qty</p></b>
+                            <p class="product-qty">(8/10 remaining)</p>
+                            <span class="add-cart btn">add to cart</span>
+                        </div>
+                    </div>
+    
+                    <div class="product-card box">
+                        <img src="image/Juice1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <input type="hidden" class="img-src" value="Juice1.jpg"/>
+                            <h2 class="product-title">Real- Mixed fruit juice.</h2>
+                            <b><p class="product-price">$<span class="price-amount">2.72</span>/qty</p></b>
+                            <p class="product-qty">(5/10 remaining)</p>
+                            <span class="add-cart btn">add to cart</span>
+                        </div>
+                    </div>
+                </div></div>
+                <div class="content" id="content2">
+                    <div class="row">
+        
+                        <div class="product-card box">
+                            <img src="image/ketchup.jpg" alt="Product Image" class="product-image">
+                            <div class="product-details">
+                                <input type="hidden" class="img-src" value="ketchup.jpg"/>
+                                <h2 class="product-title">Ketchup</h2>
+                                <b><p class="product-price">$<span class="price-amount">1.99</span>/qty </p></b>
+                                <p class="product-qty">(7/10 remaining)</p>
+                                <span class="add-cart btn">add to cart</span>
+                            </div>
+                        </div>
+        
+                        <div class="product-card box">
+                            <img src="image/kinder.jpg" alt="Product Image" class="product-image">
+                            <div class="product-details">
+                                <input type="hidden" class="img-src" value="kinder.jpg"/>
+                                <h2 class="product-title">Kinder Joy</h2>
+                                <b><p class="product-price">$<span class="price-amount">0.79</span>/qty</p></b>
+                                <p class="product-qty">(9/10 remaining)</p>
+                                <span class="add-cart btn">add to cart</span>
+                            </div>
+                        </div>
+        
+                        <div class="product-card box">
+                            <img src="image/bread.jpg" alt="Product Image" class="product-image">
+                            <div class="product-details">
+                                <input type="hidden" class="img-src" value="bread.jpg"/>
+                                <h2 class="product-title">Brown Bread</h2>
+                                <b><p class="product-price">$<span class="price-amount">0.89</span>/lb</p></b>
+                                <p class="product-qty">(9/10 remaining)</p>
+                                <span class="add-cart btn">add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+        
+                        <div class="product-card box">
+                            <img src="image/jam.jpg" alt="Product Image" class="product-image">
+                            <div class="product-details">
+                                <input type="hidden" class="img-src" value="jam.jpg"/>
+                                <h2 class="product-title">Strawberry Jam</h2>
+                                <b><p class="product-price">$<span class="price-amount">1.79</span>/lb </p></b>
+                                <p class="product-qty">(6/10 remaining)</p>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+                        </div>
+            
+                        <div class="product-card box">
+                            <img src="image/mayo.jpg" alt="Product Image" class="product-image">
+                            <div class="product-details">
+                                <input type="hidden" class="img-src" value="mayo.jpg"/>
+                                <h2 class="product-title">Kraft-Mayonnaise-30oz</h2>
+                                <b><p class="product-price">$<span class="price-amount">1.99</span>/qty</p></b>
+                                <p class="product-qty">(8/10 remaining)</p>
+                                <span class="add-cart btn">add to cart</span>
+                            </div>
+                        </div>
+            
+                        <div class="product-card box">
+                            <img src="image/lays1.jpg" alt="Product Image" class="product-image">
+                            <div class="product-details">
+                                <input type="hidden" class="img-src" value="lays1.jpg"/>
+                                <h2 class="product-title">Lays-Party size</h2>
+                                <b><p class="product-price">$<span class="price-amount">3.99</span>/qty</p></b>.
+                                <p class="product-qty">(4/10 remaining)</p>
+                                <span class="add-cart btn">add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="nextBtn" class="scroll">></button>
+            </div>
+        
+
+        
+
+
+    </section>
+
+
+
+    <section class="categories" id="categories">
+
+        <h1 class="heading"> product <span>categories</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="image/fruits.jpg" alt="">
+                <h3>fresh fruits</h3>
+                <p>upto 45% off</p>
+                <a href="#products" class="btn">click here to shop</a>
+            </div>
+
+            <div class="box">
+                <img src="image/dairydeal.jpg" alt="">
+                <h3>dairy products</h3>
+                <p>upto 20% off</p>
+                <a href="#products" class="btn">click here to shop</a>
+            </div>
+
+            <div class="box">
+                <img src="image/meats.jpg" alt="">
+                <h3>fresh meat</h3>
+                <p>upto 25% off</p>
+                <a href="#products" class="btn">click here to shop</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box" id="dailyGrocyyBox">
+                <h3> DailyGrocyy <i class="fas fa-shopping-basket"></i> </h3>
+                <p id="boxContent"><b>This website provides an intuitive and user-friendly platform for customers to purchase groceries
+                        and their daily needs.</b> <br> <b> To connect-click on the icons below.</b></p>
+                        <p id="spanish" onclick="toggleContent()"><font color = "blue">double click here for spanish </font color></p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+                
+            </div>
+            
+            <script>
+                function toggleContent() {
+                    var boxContent = document.getElementById("boxContent");
+                    var readMoreText = document.getElementById("spanish");
+            
+                    if (boxContent.innerHTML === '<b>This website provides an intuitive and user-friendly platform for customers to purchase groceries and their daily needs.</b> <br> <b> To connect-click on the icons below.</b>') {
+                        boxContent.innerHTML = '<b>Este sitio web proporciona una plataforma intuitiva y fácil de usar para que los clientes compren alimentos y satisfagan sus necesidades diarias.</b>';
+                        readMoreText.innerHTML = 'English';
+                    } else {
+                        boxContent.innerHTML = '<b>This website provides an intuitive and user-friendly platform for customers to purchase groceries and their daily needs.</b> <br> <b> To connect-click on the icons below.</b>';
+                        readMoreText.innerHTML = 'Spanish';
+                    }
+                }
+            </script>
+
+
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#" class="links"> <i class="fas fa-phone"></i> +1-571(435)-5364 </a>
+                <a href="#" class="links"> <i class="fas fa-phone"></i> +1-571(778)-8888 </a>
+                <a href="#" class="links"> <i class="fas fa-envelope"></i> Dgrocy@gmail.com </a>
+                <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> fairfax,Va, 22030 </a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+                <a href="#Deals" class="links"> <i class="fas fa-arrow-right"></i> Deals </a>
+                <a href="#products" class="links"> <i class="fas fa-arrow-right"></i> Products </a>
+                <a href="#categories" class="links"> <i class="fas fa-arrow-right"></i> Categories </a>
+
+            </div>
+
+            <div class="box">
+                <h3>Deals and Updates</h3>
+                <p>subscribe for latest deals & updates</p>
+                <input type="email" placeholder="your email" class="email">
+                <input type="submit" value="subscribe" class="btn">
+                <img src="image/pay.png" class="payment-img" alt="">
+            </div>
+
+            <div>
+                <img src="image/newsletter.png" class="newsletter-img" alt="">
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <script>
+        /*function checkinput(){
+            var input= document.getElementById('search-box').value;
+            var list = 
+        }*/
+        
+        function searchItem() {
+        var searchTerm=document.getElementById("search-box").value;
+    
+    const productNames = [
+        'Apples',
+        'Bananas',
+        'Sliced chicken breasts',
+        'Shrimp',
+        'Horizon-Organic Milk',
+        'Real- Mixed fruit juice.',
+        'Ketchup',
+        'Kinder Joy',
+        'Brown Bread',
+        'Strawberry Jam',
+        'Kraft-Mayonnaise-30oz',
+        'Lays-Party size'
+    ];
+    
+
+    const isItemPresent = productNames.includes(searchTerm);
+
+   
+
+    if (isItemPresent) {
+        //message.textContent = `Item "${searchTerm}" is present!`;
+        alert("The item is present");
+    } else {
+        alert("The item is not found, Sorry, Please try again!");
+    }
+
+   
+    }
+    </script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+    <script src="grocyy.js"></script>
+
+</body>
+
+</html>
